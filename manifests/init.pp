@@ -87,7 +87,7 @@ class oracle_java (
   # translate system architecture to expected value
   case $::architecture {
     /x86_64|amd64/ : { $arch = 'x64' }
-    'x86|i386'          : { $arch = 'i586' }
+    /x86|i386/     : { $arch = 'i586' }
     default        : { fail("oracle_java does not support architecture ${::architecture} (yet)") }
   }
 
